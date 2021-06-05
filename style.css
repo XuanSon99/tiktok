@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #052033;
+    font-size: 16px;
+}
+
+main>div {
+    background: none;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 4px 4px 15px #03121d, -4px -4px 15px #092c47;
+    background: #052033;
+    position: relative;
+}
+
+main button {
+    display: block;
+    height: 120px;
+    width: 120px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin: 0 auto;
+    border-radius: 50%;
+    box-shadow: 4px 4px 15px #03121d, -4px -4px 15px #092c47;
+    background: none;
+    color: #fff;
+    transition: all 250ms ease;
+    position: relative;
+}
+
+main button::after {
+    position: absolute;
+    content: "";
+    height: 40px;
+    width: 40px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto auto;
+    border-radius: 50%;
+    box-shadow: inset 4px 4px 15px #03121d, inset -4px -4px 15px #092c47;
+}
+
+main button:hover {
+    box-shadow: 4px 4px 15px #03121d, -4px -4px 15px #092c47, inset 4px 4px 15px #03121d, inset -4px -4px 15px #092c47;
+}
+
+main textarea {
+    width: 260px;
+    margin-bottom: 30px;
+    background: none;
+    border: none;
+    resize: none;
+    box-shadow: inset 4px 4px 15px #03121d, inset -4px -4px 15px #092c47;
+    border-radius: 15px;
+    outline: none;
+    padding: 15px;
+    color: #fff;
+    background: url('https://cliply.co/wp-content/uploads/2021/02/372102690_TIKTOK_LOGO_400.gif') center;
+    background-size: 60%;
+}
+
+main textarea::-webkit-scrollbar {
+    display: none;
+}
+
+main>img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+}
+
+main marquee {
+    display: block;
+    color: #fff;
+    position: absolute;
+    bottom: 215px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+main>div img {
+    position: absolute;
+    top: 160px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    height: 50px;
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+
+main>div img:hover {
+    transform: scale(1.1);
+}
+
+main .help {
+    width: 120px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto 0;
+    cursor: pointer;
+}

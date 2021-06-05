@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mowtain</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
+    <script src="src/tiktok.class.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <img src="./img/1.png" class="layer" data-speed="-10">
+        <img src="./img/2.png" class="layer" data-speed="-4">
+        <img src="./img/3.png" class="layer" data-speed="8">
+        <img src="./img/4.png" class="layer" data-speed="6">
+        <img src="./img/5.png" class="layer" data-speed="10">
+        <img src="./img/6.png" class="layer" data-speed="8">
+        <img src="./img/7.png" class="layer" data-speed="-10">
+        <img src="./img/8.png" class="layer" data-speed="-6">
+        <img src="./img/9.png" class="layer" data-speed="-4">
+        <img src="./img/10.png" class="layer" data-speed="8">
+        <img src="./img/11.png" class="layer" data-speed="-8">
+        <img src="./img/12.png" class="layer" data-speed="6">
+        <img src="./img/help.svg" class="layer help" data-speed="10">
+        <div class="layer" data-speed="2">
+            <textarea id="list" rows="16">
+            </textarea>
+            <marquee width="270px" direction="right">
+                Đường Tôi Chở Em Về - Buitruonglinh (Cukak Remix)
+            </marquee>
+            <button id="download"></button>
+            <img src="./img/play.svg" id="audio" alt="">
+        </div>
+    </main>
+</body>
+
+<script>
+    document.querySelector("#download").onclick = async function () {
+        try {
+            let list = JSON.parse(document.querySelector("#list").value)
+            for (let url of list) {
+                let TikTok = new JSTikTok(url);
+                await TikTok.get();
+                await TikTok.download_video();
+            }
+        } catch (error) {
+            if (confirm("Click Okeee để xem hướng dẫn!")) {
+                window.open("https://docs.google.com/document/d/1nd0MwYlNq1vJXtT0YW61Jv9Eu5BQlK43H1UDJCgQKd8/edit?usp=sharing")
+            }
+            return
+        }
+    }
+    document.addEventListener("mousemove", parallax);
+    function parallax(e) {
+        document.querySelectorAll(".layer").forEach((layer) => {
+            const speed = layer.getAttribute("data-speed");
+            const x = (window.innerWidth - e.pageX * speed) / 100;
+            const y = (window.innerHeight - e.pageY * speed) / 100;
+            layer.style.transform = `translateX(${x}px) translateY(${y}px`;
+        });
+    }
+    var audio = new Audio('audio.mp3');
+    document.querySelector("#audio").onclick = function () {
+        if (this.getAttribute("src") == "./img/play.svg") {
+            audio.play();
+            this.setAttribute("src", "./img/pause.svg")
+        } else {
+            audio.pause()
+            this.setAttribute("src", "./img/play.svg")
+        }
+    }
+</script>
+
+</html>
