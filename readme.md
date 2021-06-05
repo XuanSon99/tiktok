@@ -8,6 +8,7 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 
 Bước 3: Sau khi tải thành công file, mở file lên và copy tất cả.
 
-Bước 4: Paste link vào trang web, ấn tải và chờ thành quả thôi hehe.
+Bước 4: Paste link vào trang web, ấn tải và chờ thành quả thôi hehe. (https://xuanson99.github.io/tiktok/)
+
 
 * Lưu ý: Để tải nhanh vào cài đặt google, search “Hỏi vị trí”, sau đó chọn vị trí muốn tải xuống và tắt hỏi vị trí đi. Chúc bạn có một buổi tải vui vẻ bên gia đình.
