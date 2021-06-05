@@ -1,118 +1,13 @@
-# JS TikTok Downloader
-Download TikTok Video or Music  & get all relative meta infos **using only JavaScript.**
+Bước 1: Mở trang tiktok của user bạn muốn tải hết video.
 
-## Supported links :
-- www.tiktok.com/username/video/.....
-- m.tiktok.com/v/.....
-- vm.tiktok.com/.....
+Link dạng: “https://www.tiktok.com/@tranvan0407”
 
-## Basic Demo
-[TikTok Video & Music Downloader with only Javascript](https://abdelyouni.github.io/JS-TikTok-Downloader/demo.html "TikTok Video & Music Downloader with only Javascript")
+Bước 2: Nhấn F12 và copy paste đoạn code sau vào Console, rồi enter.
 
-## Example
-###### Basic usage :
+eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('6 2(a){p q r(b=>s(b,a))}t 6 c(){u(1 i=0;i<v;i++){w.x(0,i*3);7 2(3)}7 2(3);1 a=d.y(".e-f-4 a.e-f-4-z");1 9=[];a.A(4=>{9.B(4.C("g"))});7 2(3);h(9)}6 h(a){1 j=D.E(a);1 k=\'l:F/m;G=H-8,\'+I(j);1 n=\'l.m\';1 5=d.J(\'a\');5.o(\'g\',k);5.o(\'K\',n);5.L()}c()',48,48,'|let|sleep|1000|item|linkElement|function|await||list||resolve|run|document|video|feed|href|exportToJsonFile||dataStr|dataUri|data|json|exportFileDefaultName|setAttribute|return|new|Promise|setTimeout|async|for|20|window|scrollTo|querySelectorAll|wrapper|forEach|push|getAttribute|JSON|stringify|application|charset|utf|encodeURIComponent|createElement|download|click'.split('|'),0,{}))
 
-```html
-//Import the class
-<script src="src/tiktok.class.js"></script>
+Bước 3: Sau khi tải thành công file, mở file lên và copy tất cả.
 
-<script>
-const TikTok = new JSTikTok('TIKTOK_VIDEO_URL');
-TikTok.get().then(function(){
-	//Log the video title
-	console.log(TikTok.datas.video.title);
-	
-	//Start download
-	TikTok.video_download();
-});
-</script>
-```
-#### Force Download
+Bước 4: Paste link vào trang web, ấn tải và chờ thành quả thôi hehe.
 
-###### Force Download Video :
-Start video download :
-```
-const TikTok = new JSTikTok('TIKTOK_VIDEO_URL');
-
-TikTok.get().then(function(){
-
-	TikTok.video_download();
-	
-});
-```
-###### Force Download Music :
-Start music download :
-
-```
-const TikTok = new JSTikTok('TIKTOK_VIDEO_URL');
-
-TikTok.get().then(function(){
-
-	TikTok.music_download();
-
-});
-```
-
-## Properties
-#### Video Infos
-| Name  | Property   |
-| ------------ | ------------ |
-| Video ID  | TikTok.datas.video.id  |
-| Video Title  | TikTok.datas.video.title  |
-|  Video Keywords | TikTok.datas.video.keywords  |
-| Video Description  | TikTok.datas.video.Description  |
-|  Video Height | TikTok.datas.video.height  |
-| Video Duration (in secondes)  | TikTok.datas.video.duration  |
-|  Video Resolution | TikTok.datas.video.sizeFormat  |
-| Video Cover  | TikTok.datas.video.cover  |
-|  Video Animated Cover | TikTok.datas.video.animatedCover  |
-| Video Likes Count  | TikTok.datas.video.likes  |
-|  Video Shares Count | TikTok.datas.video.shares  |
-| Video Comments Count  | TikTok.datas.video.comments  |
-|  Video Vues Count | TikTok.datas.video.vues  |
-|  Video Original Url | TikTok.datas.video.original_url  |
-|  Video Download Url | TikTok.datas.video.download_url  |
-
-#### Music Infos
-| Name  | Parametre  |
-| ------------ | ------------ |
-| Music ID  | TikTok.datas.music.id  |
-| music Title  | TikTok.datas.music.title  |
-|  Large size Cover | TikTok.datas.music.cover_large  |
-| Medium size Cover  | TikTok.datas.music.cover_medium  |
-|  Small size Cover | TikTok.datas.music.cover_small  |
-| Singer (Artist)  | TikTok.datas.music.artist  |
-|  Album name | TikTok.datas.music.album  |
-| Duration  | TikTok.datas.music.duration  |
-|  Stream URL | TikTok.datas.music.url  |
-| Download URL | TikTok.datas.music.download_url  |
-
-#### Author Infos
-| Name  | Parametre  |
-| ------------ | ------------ |
-| Author ID  | TikTok.datas.author.id  |
-| Unique ID  | TikTok.datas.author.uniqueId  |
-| Username  | TikTok.datas.author.username  |
-| Large size Avatar  | TikTok.datas.author.avatar_large  |
-| Medium size Avatar  | TikTok.datas.author.avatar_medium  |
-| Small size Avatar  | TikTok.datas.author.avatar_small  |
-| Signature  | TikTok.datas.author.signature  |
-| SignUp date  | TikTok.datas.author.createDate  |
-| Is the profile verified ?  | TikTok.datas.author.isVerified  |
-| Followers Count  | TikTok.datas.author.followers|
-| Followings Count  | TikTok.datas.author.followings  |
-| Likes recieved Count  | TikTok.datas.author.hearts  |
-| Likes given Count  | TikTok.datas.author.diggCount  |
-| Total Videos  | TikTok.datas.author.totalVideos  |
-## Php Version
-[TikGet - TikTok video downloader php class](https://github.com/abdelyouni/TikGet "TikGet - TikTok video downloader php class")
-## License
-(The MIT License)
-
-Copyright (c) 2020 Abdel Youni
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+* Lưu ý: Để tải nhanh vào cài đặt google, search “Hỏi vị trí”, sau đó chọn vị trí muốn tải xuống và tắt hỏi vị trí đi. Chúc bạn có một buổi tải vui vẻ bên gia đình.
